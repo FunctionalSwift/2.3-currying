@@ -1,43 +1,6 @@
 //: Playground - Currying
 
-class Connector {
-    let host: String?
-    let port: Int?
-    
-    init(host: String?, port: Int?) {
-        self.host = host
-        self.port = port
-    }
-    
-    func connect() {
-        //connection logic
-    }
+func consoleLogger(type: String, msg: String) {
+    print("[\(type)]    \(msg)")
 }
-
-class ConnectorBuilder {
-    var connector = Connector(host: nil, port: nil)
-    
-    func set(host: String) -> Self {
-        connector = Connector(host: host, port: connector.port)
-        
-        return self
-    }
-    
-    func set(port: Int) -> Self {
-        connector = Connector(host: connector.host, port: port)
-        
-        return self
-    }
-    
-    func build() -> Connector {
-        return connector
-    }
-}
-
-ConnectorBuilder()
-    .set(host: "localhost")
-    .set(port: 80)
-    .build()
-    .connect()
-
 
