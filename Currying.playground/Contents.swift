@@ -1,15 +1,7 @@
 //: Playground - Currying
 
-class Connector {
-    func connect(host: String, port: Int) {
+class Conector {
+    func connect(host: String = "localhost", port: Int = 80) {
         //connection logic
-    }
-    
-    func connect(host: String) {
-        connect(host: host, port: 80)
-    }
-    
-    func connect()  {
-        connect(host: "localhost")
     }
 }
